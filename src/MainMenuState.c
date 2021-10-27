@@ -4,6 +4,8 @@
 int score = 0;
 char str_score[10] = "0";
 
+u16* CharTest = CharacterProfile;
+
 void _MainMenu_init()
 {
     //Run any init code here.
@@ -11,9 +13,7 @@ void _MainMenu_init()
 
 void _MainMenu_update()
 {
-    score  ++;
-    if (score >10)
-    score  = 0;
+    
 }
 
 void _MainMenu_render()
@@ -22,10 +22,12 @@ void _MainMenu_render()
     VDP_setPalette(PAL1, bgtile.palette->data);
     VDP_fillTileMapRect(BG_A,TILE_ATTR_FULL(PAL1,0,FALSE,FALSE,1),0,0,40,30);
     
-    sprintf(str_score,"%d",score);
 	VDP_clearText(1,2,3);
 	VDP_drawText("Main Menu",1,2); 
 
     VDP_drawText("Start Demo",1,10);
     VDP_drawText("Options",1,12);
+
+    sprintf(str_score,"%d",CharacterProfile);
+    VDP_drawText(str_score,1,13);
 }

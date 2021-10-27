@@ -4,7 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/inc"
+                "${workspaceFolder}/inc",
+                "${workspaceFolder}/inc",
+                "/Mingw/lib64/gcc/x86_64-w64-mingw32/4.8.3/include"
             ],
             "defines": [
                 "_DEBUG",
