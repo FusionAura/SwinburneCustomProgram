@@ -6,7 +6,6 @@
 
 typedef enum gameState
 { 
-	NoState,
     Title,
 	MainMenu, 
     Options,
