@@ -9,18 +9,16 @@ void _StageManager_init()
     _MainMenu_init();
 }
 
-
-
 void _StageManager_update()
 {
      // fun_ptr_arr is an array of function pointers
-    //void (*updatePtr[])(StateType) = {_Title_update,_MainMenu_update };
-    //(*updatePtr[currentState])(currentState);
+    void (*updatePtr[])(StateType) = {_Title_update,_MainMenu_update };
+    (*updatePtr[currentState])(currentState);
 
     //Attempt to get function pointers working with Game States but ran into errors.
     //Sticking to switch for now.
     
-    switch(currentState)
+    /*switch(currentState)
     {
         case MainMenu: 
         {
@@ -44,14 +42,14 @@ void _StageManager_update()
         }
         default:
         currentState = MainMenu;
-    }
+    }*/
 }
 
 void _StageManager_render()
 {
-    //void (*renderPtr[])(StateType) = {_Title_render, _MainMenu_render};
-    //(*renderPtr[currentState])(currentState);
-    switch(currentState)
+    void (*renderPtr[])(StateType) = {_Title_render, _MainMenu_render};
+    (*renderPtr[currentState])(currentState);
+    /*switch(currentState)
     {
         case MainMenu: 
         {
@@ -75,5 +73,5 @@ void _StageManager_render()
         }
         default:
         currentState = MainMenu;
-    }
+    }*/
 }
