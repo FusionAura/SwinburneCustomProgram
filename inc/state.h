@@ -9,7 +9,8 @@ typedef enum gameState
     Title,
 	MainMenu, 
     Options,
-    Gameplay
+    Gameplay,
+    GameOver
 }StateType;
 #endif
 

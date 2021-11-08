@@ -35,6 +35,7 @@
     "xmemory": "c",
     "xstddef": "c",
     "xstring": "c",
-    "genesis.h": "c"
+    "genesis.h": "c",
+    "gameplaystate.h": "c"
 }
 }

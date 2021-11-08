@@ -14,7 +14,6 @@ int main()
 
     //No OO unfortunately so need to find alternative ways of running the other scripts
     _StageManager_init();
-    
     while(1)
     {
         _StageManager_render();
