@@ -36,6 +36,7 @@
     "xstddef": "c",
     "xstring": "c",
     "genesis.h": "c",
-    "gameplaystate.h": "c"
+    "gameplaystate.h": "c",
+    "optionstate.h": "c"
 }
 }

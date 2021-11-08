@@ -3,6 +3,8 @@
 #include "Title.h"
 #include "StageManager.h"
 
+
+
 void _Title_init()
 {
     JOY_setEventHandler(&_TitleControl);
@@ -12,7 +14,7 @@ void _TitleRender_init()
 {
     if (!Splash)
     {
-            VDP_loadTileSet(bgtile.tileset,1,DMA);
+        VDP_loadTileSet(bgtile.tileset,1,DMA);
         VDP_setPalette(PAL1, bgtile.palette->data);
         VDP_setPalette(PAL2, GuardMenu.palette->data);
         VDP_fillTileMapRect(BG_A,TILE_ATTR_FULL(PAL1,0,FALSE,FALSE,1),0,0,40,30);
@@ -32,6 +34,7 @@ void _TitleRender_init()
         VDP_drawText("at Swinburne University, Hawthorn", 3,18);
         VDP_drawText("The SGDK by stef is Open Source", 3,20);
         VDP_drawText("& being used for Eductional purposes", 3,22);
+        VDP_drawText("Press Start to continue to Start Screen", 0,26);
     }
 }
 
@@ -46,15 +49,15 @@ void _TitleControl(u16 joy, u16 changed, u16 state)
             _MainMenuRenderInit();
         }
         else
-        timer = -1;
+        Timer = -1;
     }
 }
 void _Title_update()
 {
     if (Splash)
     {
-        timer -=1;
-        if (timer < 0)
+        Timer -=1;
+        if (Timer < 0)
         {
             Splash = FALSE;
             VDP_clearText(1,2,3);

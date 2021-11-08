@@ -33,6 +33,8 @@ void _MainMenuRenderInit()
     VDP_drawText("Start Demo",12,16);
     VDP_drawText("Playable Demo",12,19);
     VDP_drawText("Options",12,22);
+
+    
 }
 
 void _MenuControl(u16 joy, u16 changed, u16 state)

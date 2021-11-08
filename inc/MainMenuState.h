@@ -12,5 +12,4 @@ void _MainMenu_init();
 void _MainMenuRenderInit();
 extern void _MainMenu_render();
 extern void _MainMenu_update();
-
 #endif
