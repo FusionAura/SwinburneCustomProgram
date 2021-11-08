@@ -7,3 +7,4 @@ void _TitleRender_init();
 extern void _Title_update();
 extern void _Title_render();
 void _TitleControl(u16 joy, u16 changed, u16 state);
+
