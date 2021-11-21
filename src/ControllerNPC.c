@@ -28,6 +28,7 @@ void ControlNPC_StateChange()
     }
     else 
         SPR_setAnim(Controller.sprite, ANIM_FaceN);
+        BroadcastMove(canMove);
 }
 
 void ControlNPC_Update()
@@ -54,10 +55,5 @@ void ControlNPC_Update()
             ControlNPC_StateChange();
         }
     }
-
-}
-
-void ControlNPC_Render()
-{
 
 }

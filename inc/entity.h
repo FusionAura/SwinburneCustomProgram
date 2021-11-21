@@ -11,6 +11,9 @@ typedef struct GameObject{
 	int h;
 	int velx;
 	int vely;
+	int reaction;
+	int energy;
+	bool Safe;
 	bool active;
 	char name[6];
 }GameObject;

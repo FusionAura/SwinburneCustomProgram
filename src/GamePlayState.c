@@ -20,6 +20,8 @@ void _GamePlay_init(int mode)
 
     //Call Contestent Init to instaniate them
     Contest_Init();
+
+    BroadcastCanMove = TRUE;
 }
 void _GamePlay_Control_init()
 {
@@ -51,8 +53,14 @@ void _GamePlayControl(u16 joy, u16 changed, u16 state)
 void _GamePlay_update()
 {
     ControlNPC_Update();
+    Contest_Update();
 }
 void _GamePlay_render()
 {
-   ControlNPC_Render();
+}
+
+void BroadcastMove(bool canMoveCall)
+{
+    BroadcastCanMove = canMoveCall;
+    StopMoving(BroadcastCanMove);
 }

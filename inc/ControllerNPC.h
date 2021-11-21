@@ -1,5 +1,6 @@
 #include <entity.h>
 #include "resources.h"
+#include "GamePlayState.h"
 extern void ControlNPC_Init();
 
 extern void ControlNPC_StateChange();
