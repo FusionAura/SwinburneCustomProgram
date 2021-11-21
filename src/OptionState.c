@@ -1,5 +1,5 @@
 #include <genesis.h>
-#include <resources.h>
+#include "resources.h"
 #include "OptionState.h"
 
 void _Option_init()

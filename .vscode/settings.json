@@ -37,6 +37,7 @@
     "xstring": "c",
     "genesis.h": "c",
     "gameplaystate.h": "c",
-    "optionstate.h": "c"
+    "optionstate.h": "c",
+    "resources.h": "c"
 }
 }

@@ -7,8 +7,8 @@ typedef enum gameState
 { 
     Title,
 	MainMenu, 
-    Options,
     Gameplay,
+    Options,
     GameOver
 }StateType;
 #endif

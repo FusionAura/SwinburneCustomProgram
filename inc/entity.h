@@ -1,19 +1,21 @@
 #include <genesis.h>
-
 #ifndef _ENTITY_H_
 #define _ENTITY_H_
 
-typedef struct Entity{
+typedef struct GameObject{
+	int id;
+	Sprite* sprite;
 	int x;
 	int y;
 	int w;
 	int h;
 	int velx;
 	int vely;
-	int active;
-	Sprite* sprite;
+	bool active;
 	char name[6];
-}Entity;
-void killEntity(struct Entity* e);
-void reviveEntity(struct Entity* e);
+}GameObject;
+
+
+void killEntity(struct GameObject* e);
+void reviveEntity(struct GameObject* e);
 #endif // _ENTITY_H_

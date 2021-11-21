@@ -1,8 +1,7 @@
 #include "State.h"
 #ifndef _TITLE_H_
 #define _TITLE_H_
-int Timer = 500;
-bool Splash = TRUE;
+
 void _Title_init();
 void _TitleRender_init();
 extern void _Title_update();

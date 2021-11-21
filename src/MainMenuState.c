@@ -1,14 +1,15 @@
 #include "MainMenuState.h"
 #include "GamePlayState.h"
 #include "OptionState.h"
-#include <resources.h>
+#include "resources.h"
 
 #define ANIM_UP 0
 #define ANIM_MIDDLE 1
 #define ANIM_DOWN 2
 
 
-u16* CharTest = CharacterProfile;
+Sprite* guardMenu;
+int Menu = 0;
 
 void _MainMenu_init()
 {
@@ -53,6 +54,11 @@ void _MenuControl(u16 joy, u16 changed, u16 state)
     }
     else if (state && BUTTON_START)
     {
+        //Remove Menu Pointer
+        SPR_setPosition(guardMenu,0,0);
+        SPR_setVisibility(guardMenu,HIDDEN);
+        MEM_free(guardMenu);
+
         // fun_ptr_arr is an array of function pointers
         void (*initPtr[])(int) = {_GamePlay_init, _GamePlay_Control_init, _Option_init};
         (*initPtr[Menu])(Menu); 
@@ -60,7 +66,7 @@ void _MenuControl(u16 joy, u16 changed, u16 state)
 }
 void _MainMenu_update()
 {
-    
+
 }
 
 void _MainMenu_render()
