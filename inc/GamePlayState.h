@@ -11,12 +11,13 @@
 
 #define STARTLINE           FIX32(MAP_HEIGHT - 64)
 #define FINISHLINE          8
-#define MAXCONTESTANTS      12
-
-int MaxContest;
+#define MAXCONTESTANTS      8
+#define MAXGUARDS           2
+s16 MaxContest;
+s16 MaxGuards;
 bool BroadcastCanMove;
-int RemainingContest;
-int Prize;
+s16 RemainingContest;
+s16 Prize;
 
 extern void _GamePlay_init();
 extern void _GamePlay_Control_init();

@@ -6,17 +6,18 @@
 
 // absolute camera position (pixel)
 
-void _GamePlay_init(int mode)
+void _GamePlay_init()
 {
     MaxContest = MAXCONTESTANTS;
+    MaxGuards = MAXGUARDS;
     currentState = Gameplay;
     JOY_setEventHandler(&_GamePlayControl);
     _GamePlayRender_init();
-
     //Call Controller Init to instaniate it
     ControlNPC_Init();
 
     //Call Guard Init to instaniate them
+    Guards_Init();
 
     //Call Contestent Init to instaniate them
     Contest_Init();
@@ -26,7 +27,8 @@ void _GamePlay_init(int mode)
 void _GamePlay_Control_init()
 {
     currentState = Gameplay;
-    MaxContest = MAXCONTESTANTS;
+    MaxContest = MAXGUARDS;
+    MaxGuards = MAXGUARDS;
     JOY_setEventHandler(&_GamePlayControl);
     _GamePlayRender_init();
     ControlNPC_Init();
@@ -42,7 +44,7 @@ void _GamePlayRender_init()
 
     VDP_loadTileSet(bgFinish.tileset,2,DMA);
     VDP_setPalette(PAL2, bgFinish.palette->data);
-    VDP_fillTileMapRect(BG_A,TILE_ATTR_FULL(PAL2,0,FALSE,FALSE,2),0,4,40,4);
+    VDP_fillTileMapRect(BG_A,TILE_ATTR_FULL(PAL2,0,FALSE,FALSE,2),0,4,40,2);
     
 }
 

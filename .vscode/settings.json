@@ -38,6 +38,7 @@
     "genesis.h": "c",
     "gameplaystate.h": "c",
     "optionstate.h": "c",
-    "resources.h": "c"
+    "resources.h": "c",
+    "entity.h": "c"
 }
 }

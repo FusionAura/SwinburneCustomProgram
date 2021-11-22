@@ -3,17 +3,18 @@
 #define _ENTITY_H_
 
 typedef struct GameObject{
-	int id;
+	s16 id;
 	Sprite* sprite;
-	int x;
-	int y;
-	int w;
-	int h;
-	int velx;
-	int vely;
-	int reaction;
-	int energy;
+	fix16 x;
+	fix16 y;
+	s16 w;
+	s16 h;
+	fix16 velx;
+	fix16 vely;
+	s16 reaction;
+	s16 energy;
 	bool Safe;
+	bool Guilty;
 	bool active;
 	char name[6];
 }GameObject;

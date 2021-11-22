@@ -4,7 +4,7 @@
 #include "StageManager.h"
 
 
-int Timer = 500;
+s16 Timer = 500;
 bool Splash = TRUE;
 
 void _Title_init()
