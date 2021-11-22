@@ -2,7 +2,8 @@
 #include "entity.h"
 #include "GamePlayState.h"
 #include "resources.h"
-bool move;
+bool GlobalMove;
+
 void Contest_Init();
 void Contest_Init_Render();
 
@@ -10,4 +11,5 @@ void Contest_Update();
 
 void Contest_Render();
 
-void StopMoving(bool MovingCheck);
+void CheckReaction(bool MovingCheck);
+void StopMoving( struct GameObject* e, bool MovingCheck);

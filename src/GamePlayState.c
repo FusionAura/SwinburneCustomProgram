@@ -2,9 +2,10 @@
 #include "StageManager.h"
 #include "resources.h"
 #include "GamePlayState.h"
-#include "ControllerNPC.h"
 
 // absolute camera position (pixel)
+
+
 
 void _GamePlay_init()
 {
@@ -50,7 +51,7 @@ void _GamePlayRender_init()
 
 void _GamePlayControl(u16 joy, u16 changed, u16 state)
 {
-
+    //TODO, Player Controlled one
 }
 void _GamePlay_update()
 {
@@ -59,10 +60,16 @@ void _GamePlay_update()
 }
 void _GamePlay_render()
 {
+
 }
 
 void BroadcastMove(bool canMoveCall)
 {
     BroadcastCanMove = canMoveCall;
-    StopMoving(BroadcastCanMove);
+    CheckReaction(BroadcastCanMove);
+}
+
+void CaughtMoving(struct GameObject* e)
+{
+    Shoot(e);
 }

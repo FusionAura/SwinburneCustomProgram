@@ -17,7 +17,7 @@ void ControlNPC_Init()
     canMove = TRUE;
     /*Add the player*/
     Controller.x = 144;
-    Controller.y = 8;
+    Controller.y = 9;
     Controller.active = 1;
     Controller.sprite = SPR_addSprite(&GuardChibi,Controller.x,Controller.y,TILE_ATTR(PAL2,0,FALSE,FALSE));
 

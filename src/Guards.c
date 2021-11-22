@@ -22,12 +22,19 @@ void Guards_Init()
     }
 }
 
-void Guards_RenderInit()
+void Shoot(struct GameObject* e)
 {
-    
+    for (s16 i = 0; i<RemainingContest;i++)
+    {
+        if (!e->Safe && e->Guilty && e->active)
+        {
+            killEntity(e);
+            RemainingContest --;
+        }
+    }
 }
 
-void Guards_Update()
+void Guards_Update(GameObject* e)
 {
-    
+   
 }

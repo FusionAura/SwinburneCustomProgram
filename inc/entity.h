@@ -13,13 +13,12 @@ typedef struct GameObject{
 	fix16 vely;
 	s16 reaction;
 	s16 energy;
+	bool move;
 	bool Safe;
 	bool Guilty;
 	bool active;
 	char name[6];
 }GameObject;
-
-
-void killEntity(struct GameObject* e);
+void killEntity(struct GameObject * e);
 void reviveEntity(struct GameObject* e);
 #endif // _ENTITY_H_

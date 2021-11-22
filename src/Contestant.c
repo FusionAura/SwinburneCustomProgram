@@ -9,11 +9,12 @@ struct GameObject Contestent[MAXCONTESTANTS];
 bool Controllable = FALSE;
 fix16 speed = 10; //Base speed value
 
-
+s16 reactionwait = 0;
+s16 reactionwaitMax = 15;
 void Contest_Init()
 {
     u16 rand = random() % (2 - 1 + 1);
-    move = TRUE;
+    
     struct GameObject* e = Contestent;
     //MaxContest = MAXCONTESTANTS;
     /*Create all enemy sprites*/
@@ -29,13 +30,15 @@ void Contest_Init()
         e->velx = 1;
         e->vely = random()% 10 + speed;
         e->energy = random()% 5+1;
-        e->reaction = random()% 2+1;
+        e->reaction = random()% 100;
         e->active = 1;
         e->Safe = FALSE;
         e->Guilty = FALSE;
         e->sprite = SPR_addSprite(&GuardChibi,e->x,e->y,TILE_ATTR(PAL2,0,FALSE,FALSE));
         sprintf(e->name, "En%d",i);
         RemainingContest++;
+        e->move = TRUE;
+
         e++;
         x++;
         if (x > 12)
@@ -60,7 +63,9 @@ void Contest_Update()
         struct GameObject* e = &Contestent[i];
         if (!e->Safe)
         {
-            if (move)
+            if (e->y < FINISHLINE)
+                e->Safe = TRUE;
+            else if (e->move)
             { 
                 if(e->active > 0)
                 {
@@ -68,22 +73,32 @@ void Contest_Update()
                     SPR_setPosition(e->sprite, e->x, fix16ToInt(e->y));
                 }
             }
-            if (e->y < FINISHLINE)
-            {
-                e->Safe = TRUE;
-
-                if (e->Guilty)
-                    killEntity(e);
-            }
-        }
+        }            
     }
 }
 
-void StopMoving(bool MovingCheck)
+void CheckReaction(bool MovingCheck)
 {
+    GlobalMove = MovingCheck;
     for(s16 i = 0; i < MaxContest; i++)
     {
         struct GameObject* e = &Contestent[i];
-        move = MovingCheck;
+        if (!GlobalMove)
+            StopMoving(e,GlobalMove);
+        else
+             e->move = MovingCheck;
+    }
+}
+
+void StopMoving( struct GameObject* e, bool MovingCheck)
+{
+    e->reaction = random()% 100;
+    if (e->reaction < 75)
+        e->move = MovingCheck;
+    else
+    {
+        e->Guilty = TRUE;
+        CaughtMoving(e);
+        
     }
 }
